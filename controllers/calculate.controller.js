@@ -3,14 +3,14 @@ const NodeStl = require("node-stl");
 const path = require("path");
 
 const calculateMass = async (req, res) => {
-  const { name, quantity, file } = req.body;
+  const { name, density, file, volume } = req.body;
   let stl = new NodeStl(path.join(__dirname, "../uploads", `${file}`), {
-    density: 1.015,
+    density: density,
   });
 
   console.log(path.join(__dirname, "../uploads", `${file}`));
 
-  return res.status(StatusCodes.OK).json({ name, quantity, stl });
+  return res.status(StatusCodes.OK).json({ name, stl, volume });
 };
 
 module.exports = { calculateMass };

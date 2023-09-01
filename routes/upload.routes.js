@@ -26,6 +26,6 @@ const uploadMiddleware = multer({
 router.route("/").post(uploadMiddleware.single("file"), upload);
 //router.route("/").post(...): This sets up a route handler for the 
 //root URL path ("/") with an HTTP POST method. The router object is 
-//likely an instance of express.Router()
+//an instance of express.Router()
 
 module.exports = router;
