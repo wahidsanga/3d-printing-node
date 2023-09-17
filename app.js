@@ -12,6 +12,7 @@ const cors = require("cors");
 // routers
 const uploadRouter = require("./routes/upload.routes.js");
 const calculateRouter = require("./routes/calculate.routes.js");
+const verifyRouter = require("./routes/verify.routes.js");
 
 // middleware
 const notFoundMiddleware = require("./middleware/not-found");
@@ -30,6 +31,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/upload", uploadRouter);
 app.use("/api/calculate", calculateRouter);
+app.use("/api/verify", verifyRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
